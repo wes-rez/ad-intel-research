@@ -22,12 +22,13 @@ This workflow guides the process of gathering comprehensive intelligence on a co
 
 ### Evidence-enrichment subagents
 
-When the report requires deeper customer evidence, run the four workstreams in [references/subagent_workflows.md](subagent_workflows.md) in parallel, then synthesize them before writing the final report:
+When the report requires deeper customer evidence, follow the phased process in [references/subagent_workflows.md](subagent_workflows.md):
 
-1. **Reviews and Trustpilot:** Ask whether to inspect the top 1,000 publicly accessible reviews per brand (default) or all publicly accessible reviews. Inspect multiple pages, record the exposed aggregate versus text actually reviewed, and deduplicate syndicated content.
-2. **Reddit and niche communities:** Use query families for brands, comparisons, failure modes, purchase intent, and DIY alternatives. Capture direct user language, thread URLs, dates, community context, and whether the statement is an owner experience or recommendation.
-3. **Amazon marketplace:** Capture exact product/ASIN URLs, visible price, rating, review count/distribution, variants, Q&A themes, “Customers say” summaries, and recurring setup, durability, shipping, or support issues. Mark Amazon-generated aggregation separately from direct review text.
-4. **Hero-brand post-purchase VOC:** Design a short delivery/first-use survey and a deeper 30-day survey. Ask about purchase triggers, alternatives considered, offer attribution, setup, durability, support, returns, repeat use, and desired improvements. Do not invent responses.
+1. Ask for three decisions: review cap, export format (Google Sheets or CSV), and competitor count (3, 4, or more). Explain that more competitors require more research and credits.
+2. **Hero-brand phase:** Run reviews/Trustpilot, Reddit, Amazon, and post-purchase VOC workstreams for every applicable platform. Each agent must aggregate shining feedback, criticisms, alternative solutions, conversion reasons, common language, painful problems, desired results, objection quotes, and credible solution angles.
+3. **Competitor phase:** Repeat the same four workstreams for the selected competitors using the identical evidence schema. Cap each platform at 1,000 reviews per brand by default. If more exist, ask permission before continuing; recommend up to 25% of total reviews for the expanded pass.
+4. Save normalized row-level evidence for future reference in the selected Google Sheet or CSV export. Never overwrite prior runs; use a dated run ID and preserve source URLs and quotes.
+5. **Insights phase:** After all evidence agents finish, run exactly one insights agent to create the executable creative brief with cross-brand trends, creative angles, headline drafts, offer ideas, objection/rebuttal pairs, and customer avatars with attributed quotes.
 
 Every workstream must record source provenance, collection depth, confidence, and limitations. Use the shared evidence schema and synthesis requirements in `subagent_workflows.md`.
 
@@ -59,6 +60,7 @@ Every workstream must record source provenance, collection depth, confidence, an
 5. Clearly distinguish **Observed**, **Inferred**, and **Recommended** conclusions.
 6. Synthesize actionable strategic takeaways: Opportunities, Threats, Creative Inspiration.
 7. Add a first-party VOC validation plan based on the hero-brand post-purchase survey workstream.
+8. Include the insights-agent output or link to the standalone creative brief and evidence export.
 
 ## Step 8: HTML Output (if requested)
 If the user requests an HTML version styled to their brand:

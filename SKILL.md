@@ -20,7 +20,7 @@ Produce a complete competitive picture covering:
 
 Follow the step-by-step process in [references/workflow.md](references/workflow.md).
 
-For deeper voice-of-customer evidence, use the four parallel workstreams in [references/subagent_workflows.md](references/subagent_workflows.md): reviews/Trustpilot, Reddit and niche communities, Amazon marketplace evidence, and a first-party post-purchase survey process. Ask the user to choose the review scope before starting: top 1,000 publicly accessible reviews per brand (default) or all publicly accessible reviews.
+For deeper voice-of-customer evidence, use the phased workflow in [references/subagent_workflows.md](references/subagent_workflows.md): run all four platform workstreams for the hero brand first, then repeat them for the selected competitors, then run one insights agent. Before starting, ask the user to choose the review cap (default: top 1,000 publicly accessible reviews per brand per platform), the export format (Google Sheets or CSV), and the competitor count (3, 4, or more). Explain that additional competitors multiply research scope and agent-call/credit requirements. If a platform has more than 1,000 reviews, stop at the cap and ask permission before expanding; recommend no more than 25% of the total review count in an expanded pass.
 
 ### Key Investigation Areas
 
@@ -31,6 +31,7 @@ For deeper voice-of-customer evidence, use the four parallel workstreams in [ref
 - **DIY Alternatives:** Identify cheap workarounds users mention on Reddit — critical for positioning the client brand against non-brand competitors.
 - **Evidence provenance:** Label findings as observed, inferred, or recommended; distinguish first-party, third-party, syndicated, and platform-generated evidence; record collection depth and confidence.
 - **Post-purchase VOC:** Use the hero brand's survey process to validate public-source hypotheses with purchase-trigger, competitor-consideration, setup, durability, support, and retention questions.
+- **Creative-ready VOC:** For every platform and brand, aggregate shining feedback, criticisms, alternative solutions, conversion reasons, customer language, slang, painful problems, desired results, objection quotes, and credible rebuttal angles.
 
 ## Output Format
 
@@ -42,6 +43,7 @@ The report MUST include:
 - **Meta Ads section** with volume estimate and creative angle analysis.
 - **Strategic Takeaways** with Opportunities, Threats, and Creative Inspiration.
 - **Evidence Quality & VOC Plan** with sample depth, source limitations, confidence labels, and the next first-party survey actions.
+- **Creative Insights Brief** with cross-brand trends, evidence-backed headline drafts, offer ideas, objections/rebuttals, prioritized creative tests, and customer avatars supported by attributed quotes.
 
 ### HTML Output
 

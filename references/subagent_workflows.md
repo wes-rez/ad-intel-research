@@ -1,119 +1,197 @@
 # Evidence-Enrichment Subagent Workflows
 
-Use this reference when a competitive-intelligence report needs deeper customer evidence than a single-pass web search can provide. Run the four workstreams in parallel when they are independent, then run one synthesis/reducer pass over the outputs.
+Use this reference when competitive intelligence needs deep customer evidence and creative-ready outputs. The workflow has three phases:
 
-## Scope gate
+1. **Hero-brand evidence:** run all four platform workstreams for the hero brand.
+2. **Competitor evidence:** run the same four platform workstreams for the selected competitor set.
+3. **Creative insights:** run one insights agent after all evidence agents finish.
 
-Before starting the review workstream, ask the user to choose one scope per brand:
+## Required scope gates
 
-- **Top 1,000 publicly accessible reviews per brand:** default for repeatable research; inspect multiple pages until the cap or the public source ends.
-- **All publicly accessible reviews:** only use when the user explicitly accepts longer runtime, pagination limits, and more duplicate/low-signal data.
+Ask these questions before launching research:
 
-Never claim to have collected all reviews when a site exposes only a sample, an aggregate, or a capped view.
+1. **Review depth:** “Should we cap each platform at the top 1,000 publicly accessible reviews per brand, or request more? If a platform has more than 1,000 reviews, the recommended next step is to inspect up to 25% of the total review count, subject to access and budget.”
+2. **Export format:** “Should the scraped evidence be saved as Google Sheets or CSV?” If Google Sheets is selected, confirm the destination/account or connected workspace before writing. If CSV is selected, save one normalized file per platform plus a combined file.
+3. **Competitor count:** “Should we research 3, 4, or more competitors?” Explain that each additional competitor multiplies platform research and agent-call/credit requirements. Do not start the competitor phase until the user chooses.
 
-## Four workstreams
+The default is **top 1,000 reviews per brand per platform**. This is a cap, not a promise that 1,000 reviews are available or accessible. Record the total visible review count, the number inspected, and the stop reason.
 
-### 1. Reviews and Trustpilot
+Do not bypass CAPTCHA, login walls, robots restrictions, rate limits, paywalls, or platform access controls. If a source exposes only aggregates or snippets, label it as such.
 
-Research the hero brand plus every selected competitor across:
+## Phase 1: Hero-brand platform agents
 
-- Official product-review widgets and testimonial pages.
-- Trustpilot profiles that clearly match the brand and category.
-- Relevant third-party review platforms and retailer review pages.
+Run each workstream for the hero brand across all applicable public platforms, not only one source:
 
-For each brand, capture:
+- Official site/product reviews and testimonials.
+- Trustpilot or equivalent review platforms.
+- Amazon product pages and visible review evidence.
+- Reddit and relevant niche communities.
 
-- Platform, URL, product/SKU, rating, rating count, visible review count, and pagination depth.
-- Number of review texts actually inspected versus the exposed aggregate.
-- Positive themes, negative themes, product failures, service issues, delivery/packaging issues, and warranty experiences.
-- Whether the content is first-party, third-party, syndicated, or platform-generated thematic aggregation.
-- Confidence and limitations.
+The hero-brand agents must produce both a research report and normalized row-level evidence for future reference.
 
-Rules:
+### Shared extraction lens for every hero-brand agent
 
-- Inspect multiple pages when pagination is available.
-- Deduplicate obvious syndicated or duplicated reviews.
-- Treat an empty Trustpilot profile as “insufficient data,” not a positive or negative result.
-- Separate product-level evidence from brand-level testimonials.
-- Do not bypass CAPTCHA, login walls, robots restrictions, rate limits, or paywalls.
+Every platform agent must aggregate the following categories, with source URL and verbatim quote where publicly visible:
 
-### 2. Reddit and niche communities
+#### Shining feedback
 
-Search public threads and comments across relevant subreddits and forums. Use query families rather than one brand query:
+Descriptive praise that explains what customers value in features, experiences, or results. Convert it into:
 
-- Brand + product: `[brand] net`, `[brand] tee`, `[brand] pitching machine`.
-- Purchase intent: `best hitting net`, `recommend portable batting net`, `what should I buy`.
-- Failure modes: `broken`, `ripped`, `rust`, `wind`, `setup`, `replacement`, `warranty`.
-- Comparisons: `[brand] vs [competitor]`, `Bownet PowerNet`, `Rukket vs`.
-- Alternatives: `DIY`, `PVC`, `EMT`, `cheap`, `Amazon`, `wiffle`, `homemade`.
+- High-converting headline candidates.
+- Benefit-led ad angles.
+- Proof points and feature-to-result messaging.
+- Repeated phrases worth testing in customer-language creative.
 
-For every cited thread, record subreddit/forum, thread URL, date, author context when public, direct user language, and whether the statement is an owner experience, recommendation, speculation, or affiliate content.
+#### Criticisms
 
-Improve future runs by:
+Product, service, delivery, setup, durability, or expectation problems. Convert them into:
 
-- Using fixed date windows and recording the query set.
-- Sampling both high-engagement and recent threads.
-- Reading enough comments to capture disagreement, not only the top comment.
-- Deduplicating cross-posts and copied product-review language.
-- Flagging affiliate links, brand representatives, bots, and likely astroturfing.
-- Coding each statement to a controlled taxonomy: setup, durability, portability, stability, value, support, warranty, performance, space, storage, shipping, and DIY substitute.
-- Separating “people asking what to buy” from verified owner reviews.
+- Product improvement opportunities.
+- Objection angles.
+- Verbatim objection quotes.
+- Rebuttal or solution angles, only when the hero brand can credibly answer the concern.
 
-Never present Reddit frequency as market share. Use it as qualitative voice-of-customer evidence.
+Never turn a criticism into a claim that the brand has solved it unless the evidence supports that claim.
 
-### 3. Amazon marketplace intelligence
+#### Alternative solutions
 
-Inspect public Amazon product pages and indexed marketplace evidence for each relevant competitor. Prioritize comparable SKUs and record the exact product URL/ASIN.
+Capture what customers considered or used instead:
 
-Capture:
+- Named competitors and generic alternatives.
+- DIY or no-purchase workarounds.
+- Price and option comparisons.
+- What made the customer choose the hero brand instead of the alternative.
+- Why the alternative was rejected, abandoned, or preferred.
 
-- Current visible price, variations, badges, rating, rating count, and review distribution.
-- “Customers say” themes only as Amazon-generated aggregation, not as an independent researcher conclusion.
-- Visible review excerpts, Q&A themes, recurring complaints, packaging/shipping problems, missing parts, setup friction, durability issues, and returns/warranty language.
-- Review geography and whether ratings are global or region-specific.
-- Differences among variants that could explain rating divergence.
+#### Common trends and language
 
-Rules:
+Aggregate recurring:
 
-- Distinguish Amazon-native reviews from reviews syndicated from another retailer or brand site.
-- Do not infer review text that is not visible.
-- Do not scrape behind login, CAPTCHA, or access controls.
-- Treat search snippets as discovery leads; verify important facts on the product page or another authoritative source.
-- Report collection date and the number of pages/reviews actually inspected.
+- Customer language, slang, terms, and meaningful sentences.
+- Problems and desired outcomes.
+- Most painful problems and moments of frustration.
+- Results customers describe after use.
+- Words that indicate awareness, urgency, sophistication, or purchase readiness.
 
-### 4. Hero-brand post-purchase survey and VOC process
+Use frequency only as a directional signal. Preserve high-value outlier language when it clearly describes a painful problem or compelling result.
 
-For the hero brand, design a repeatable first-party evidence loop rather than inventing survey findings. Deliver:
+### Required hero-brand evidence fields
 
-- A short post-purchase survey for high response rate.
-- A deeper 30-day usage survey for product experience and competitive switching.
-- Exact questions, response types, optional open text, and segmentation fields.
-- Questions about alternatives considered, brands compared, purchase trigger, objections, offer attribution, setup, durability, use frequency, and desired improvements.
-- Sampling rules, consent/privacy language, suppression rules, and export schema.
-- A monthly coding and insight-review process that joins survey responses to product, channel, offer, and return data.
+Each row should include:
 
-Recommended timing:
+- `brand`
+- `platform`
+- `source_url`
+- `product_or_sku`
+- `review_or_thread_id` when public
+- `date` when visible
+- `rating` and `rating_count` when applicable
+- `evidence_type`: first-party, third-party, syndicated, platform aggregation, or survey design
+- `sentiment`: shining, criticism, mixed, neutral, or alternative
+- `verbatim_quote`
+- `normalized_theme`
+- `customer_problem`
+- `desired_result`
+- `alternative_solution`
+- `conversion_reason`
+- `objection_or_friction`
+- `rebuttal_or_solution_angle`
+- `creative_use`: headline, hook, body copy, testimonial, objection handling, offer, or research only
+- `avatar_signals`: age/life stage, role, sport/use case, skill level, geography if public
+- `confidence`
+- `limitations`
 
-- **Immediately after delivery:** receipt, first-use intent, purchase trigger, and setup expectations.
-- **7–14 days:** setup success, first training session, missing parts, early friction.
-- **30 days:** repeat usage, durability, perceived improvement, alternative products, satisfaction, and referral intent.
-- **After return or support contact:** reason, competitor/alternative, and recovery experience.
+## Phase 2: Competitor platform agents
 
-Do not treat NPS alone as competitive intelligence. Pair it with verbatim responses and product/SKU metadata.
+After hero-brand evidence is complete, ask for the competitor count and selected names. Then run the same four platform workstreams for each competitor. Use the same extraction lens and schema so the insights agent can compare brands directly.
+
+For competitors, add these comparison fields:
+
+- `competitor_advantage`
+- `hero_brand_counter_angle`
+- `price_or_option_comparison`
+- `switching_signal`
+- `customer_quote_source`: hero brand or competitor brand
+
+Cap every platform at 1,000 publicly accessible reviews per brand by default. If the platform has more than 1,000 reviews, stop at 1,000 and ask whether to continue; recommend a maximum of 25% of the platform’s total review count for the expanded pass, subject to access and budget.
+
+## Platform-specific requirements
+
+### Reviews and Trustpilot
+
+Inspect multiple pages when pagination is available. Capture official review widgets, testimonials, Trustpilot, retailer reviews, and relevant review sites. Record the visible aggregate separately from text actually inspected. Deduplicate syndicated content and mark empty Trustpilot profiles as insufficient data.
+
+### Reddit and niche communities
+
+Use query families for brand/product, purchase intent, failure modes, comparisons, alternatives, and outcomes. Sample recent and high-engagement threads, read enough comments to capture disagreement, and record subreddit, URL, date, direct language, and owner-versus-recommendation status. Flag affiliate links, brand representatives, bots, and likely astroturfing. Never present Reddit frequency as market share.
+
+### Amazon
+
+Record exact product URLs/ASINs, price, variants, badges, rating distribution, review count, visible review excerpts, Q&A themes, shipping/packaging issues, missing parts, setup friction, durability, returns, and warranty language. Treat “Customers say” as Amazon-generated aggregation and separate it from direct review text. Record region/global rating scope.
+
+### Hero-brand post-purchase survey
+
+Design, do not fabricate, first-party evidence collection:
+
+- Immediate delivery survey: purchase trigger, expectations, alternatives considered, offer attribution.
+- 7–14 day survey: setup, first use, missing parts, early friction, intended use.
+- 30-day survey: repeat use, durability, results, satisfaction, competitor comparison, desired improvements.
+- Return/support survey: reason, alternative chosen, recovery experience, unresolved objection.
+
+Include exact questions, response types, consent/privacy language, sampling rules, suppression rules, and export fields. Pair ratings with verbatim responses and product/SKU/channel/offer metadata.
+
+## Export and persistence requirements
+
+Before collection, ask whether the user wants **Google Sheets or CSV**. Save the normalized evidence for future reference:
+
+- Google Sheets: one tab per platform, one tab for the combined evidence table, one tab for taxonomy/definitions, and one tab for run metadata and source limits.
+- CSV: one file per platform, one combined CSV, and one metadata JSON or Markdown file containing collection date, queries, page depth, cap, stop reasons, and limitations.
+
+Do not overwrite prior runs. Use a dated run identifier and stable row IDs so future runs can append or compare changes.
+
+## Phase 3: Insights agent
+
+Start exactly one insights agent after all hero-brand and competitor subagents finish. Its goal is an easy-to-read, executable document that fuels creative strategy.
+
+The insights agent must include:
+
+1. **Executive creative readout:** the few highest-leverage findings.
+2. **Cross-brand trend map:** repeated language, problems, desires, results, and objections across all brands.
+3. **Hero-brand strengths:** shining feedback, proof points, and customer language to preserve.
+4. **Hero-brand criticisms:** product improvements, objection angles, verbatim objection quotes, and credible rebuttal/solution angles.
+5. **Alternative-solution map:** competitor, DIY, generic marketplace, and do-nothing alternatives; why customers switch or stay.
+6. **Creative inspiration angles:** at least 10 angles mapped to evidence and funnel stage.
+7. **Sample strong headlines:** headline candidates grounded in shining feedback, pain, desired results, and objection handling. Label them as drafts, not tested winners.
+8. **Sample offers:** offer structures suggested by the evidence, with assumptions and risks.
+9. **Top objections and rebuttals:** objection quote, source brand, evidence, and credible answer.
+10. **Customer avatars:** for each major avatar, include estimated age/life stage, role, use case, pains, objections, desires, desired results, awareness level, buying trigger, alternatives, and real-world sample quotes. Every quote must identify whether it came from a hero-brand review or competitor-brand review.
+11. **Prioritized test plan:** creative concepts, hook variants, proof, CTA, landing-page implication, and measurement hypothesis.
+12. **Evidence gaps:** what still requires survey validation or deeper collection.
+
+Clearly label each conclusion as **Observed**, **Inferred**, or **Recommended**. Do not call a headline “high converting” unless it has actually been tested; call it a high-potential or evidence-backed draft.
 
 ## Shared evidence schema
-
-Every workstream should return these fields, even when the value is “not publicly available”:
 
 ```json
 {
   "brand": "string",
-  "source_url": "string",
   "platform": "string",
+  "source_url": "string",
+  "product_or_sku": "string",
+  "review_or_thread_id": "string",
+  "date": "string",
   "evidence_type": "first_party | third_party | syndicated | platform_aggregation | proposed_process",
-  "observed_fact": "string",
-  "customer_language": ["string"],
-  "themes": ["setup | durability | portability | stability | value | support | warranty | performance | space | storage | shipping | DIY"],
+  "sentiment": "shining | criticism | mixed | neutral | alternative",
+  "verbatim_quote": "string",
+  "normalized_theme": "string",
+  "customer_problem": "string",
+  "desired_result": "string",
+  "alternative_solution": "string",
+  "conversion_reason": "string",
+  "objection_or_friction": "string",
+  "rebuttal_or_solution_angle": "string",
+  "creative_use": "headline | hook | body_copy | testimonial | objection_handling | offer | research_only",
+  "avatar_signals": ["string"],
   "sample_or_count": "string",
   "collection_depth": "string",
   "confidence": "high | medium | low",
@@ -121,27 +199,19 @@ Every workstream should return these fields, even when the value is “not publi
 }
 ```
 
-## Synthesis requirements
+## Recommended output files
 
-The reducer should combine the workstreams into:
+Use a dated, collision-free directory for each run:
 
-1. An evidence matrix by brand and theme.
-2. Repeated pain points that appear across at least two independent source types.
-3. Brand-specific strengths and weaknesses with provenance labels.
-4. Competitive gaps that can become ad hooks or landing-page proof.
-5. A repeatable next-run protocol with exact query families, page limits, sampling rules, and stop conditions.
-6. A first-party VOC implementation plan for validating public-source hypotheses.
+- `reports/<run-id>/hero-reviews-trustpilot.md`
+- `reports/<run-id>/hero-reddit.md`
+- `reports/<run-id>/hero-amazon.md`
+- `reports/<run-id>/hero-post-purchase-voc.md`
+- `reports/<run-id>/competitors/<brand>/reviews-trustpilot.md`
+- `reports/<run-id>/competitors/<brand>/reddit.md`
+- `reports/<run-id>/competitors/<brand>/amazon.md`
+- `reports/<run-id>/competitors/<brand>/post-purchase-voc.md`
+- `reports/<run-id>/evidence.csv` or the selected Google Sheet
+- `reports/<run-id>/insights-and-creative-brief.md`
 
-Clearly label each conclusion as **Observed**, **Inferred**, or **Recommended**. Do not let a high-volume but syndicated or platform-generated source outweigh a smaller set of verified owner experiences without stating the trade-off.
-
-## Output files
-
-When file outputs are requested, use collision-free paths such as:
-
-- `reports/reviews-trustpilot.md`
-- `reports/reddit-intelligence.md`
-- `reports/amazon-intelligence.md`
-- `reports/post-purchase-survey.md`
-- `reports/improved-ad-intel-insights.md`
-
-Keep the main client-facing report concise; link or append the evidence-enrichment reports when detailed provenance is useful.
+Keep the main client-facing report concise, link the evidence export, and preserve all source URLs and verbatim quotes for auditability.

@@ -98,6 +98,58 @@ Label conclusions as **Observed**, **Inferred**, or **Recommended**. Do not comb
 2. **[Gap]:** [What could not be verified and how to validate it]
 
 ---
+## 5. Creative Insights Brief
+
+### 5.1 Cross-Brand Trends
+
+| Trend | Brands / Platforms | Customer Language | Problem or Desire | Creative Implication | Evidence Confidence |
+|---|---|---|---|---|---|
+| [Trend] | [Brands and sources] | “[Verbatim phrase]” | [Problem/desire] | [How to use it] | [High / Medium / Low] |
+
+### 5.2 Hero-Brand Shining Feedback
+
+- **Feature or result valued:** [What customers praise]
+- **Evidence-backed headline drafts:**
+  1. “[Draft headline]” — [source quote/theme]
+  2. “[Draft headline]” — [source quote/theme]
+- **Ad angles:** [Benefit, proof, use case, or transformation angles]
+
+### 5.3 Criticisms, Objections, and Rebuttals
+
+| Objection / Verbatim Quote | Source Brand | Product or Experience Issue | Credible Rebuttal / Solution Angle | Product or Proof Needed |
+|---|---|---|---|---|
+| “[Quote]” | [Hero / Competitor] | [Issue] | [Rebuttal] | [Evidence or improvement] |
+
+### 5.4 Alternative Solutions and Switching Angles
+
+| Alternative | Why Considered | Why Rejected or Preferred | Price / Option Comparison | Hero-Brand Counter-Angle |
+|---|---|---|---|---|
+| [Competitor / DIY / Do nothing] | [Reason] | [Reason] | [Comparison] | [Angle] |
+
+### 5.5 Sample Offers
+
+1. **[Offer concept]:** [Structure, audience, evidence basis, and risk]
+2. **[Offer concept]:** [Structure, audience, evidence basis, and risk]
+
+These are recommended offer hypotheses, not validated winners.
+
+### 5.6 Customer Avatars
+
+| Avatar | Estimated Age / Life Stage | Role / Use Case | Pains | Objections | Desires | Desired Results | Buying Trigger | Alternatives | Attributed Sample Quotes |
+|---|---|---|---|---|---|---|---|---|---|
+| [Avatar] | [Estimate] | [Role/use case] | [Pains] | [Objections] | [Desires] | [Results] | [Trigger] | [Alternatives] | “[Quote]” — [Hero or competitor brand, platform] |
+
+Use estimated demographics only when supported by public context or first-party survey data. Every quote must identify whether it came from a hero-brand review or a competitor-brand review.
+
+### 5.7 Prioritized Creative Test Plan
+
+| Priority | Concept | Hook | Proof | CTA / Offer | Audience | Landing-Page Implication | Measurement Hypothesis |
+|---:|---|---|---|---|---|---|---|
+| 1 | [Concept] | [Hook] | [Proof] | [CTA/offer] | [Audience] | [Page change] | [Hypothesis] |
+
+Label headline and offer ideas as **evidence-backed drafts** or **recommendations** unless they have been tested in-market.
+
+---
 ## References
 [1] [Source description](URL)
 [2] [Source description](URL)
