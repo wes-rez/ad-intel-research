@@ -20,6 +20,8 @@ Produce a complete competitive picture covering:
 
 Follow the step-by-step process in [references/workflow.md](references/workflow.md).
 
+For deeper voice-of-customer evidence, use the four parallel workstreams in [references/subagent_workflows.md](references/subagent_workflows.md): reviews/Trustpilot, Reddit and niche communities, Amazon marketplace evidence, and a first-party post-purchase survey process. Ask the user to choose the review scope before starting: top 1,000 publicly accessible reviews per brand (default) or all publicly accessible reviews.
+
 ### Key Investigation Areas
 
 - **Competitor Websites:** Always visit each competitor's site to extract real pricing, key SKUs, and current promotions before writing the comparison table.
@@ -27,6 +29,8 @@ Follow the step-by-step process in [references/workflow.md](references/workflow.
 - **Review Sites:** Amazon, Trustpilot, G2, or industry-specific platforms. Note rating, volume, and recurring themes.
 - **Meta Ads Library:** Assess active ad volume (High/Medium/Low), primary formats, core messaging angles, and target audience signals (e.g., "Sports Moms," gym owners).
 - **DIY Alternatives:** Identify cheap workarounds users mention on Reddit — critical for positioning the client brand against non-brand competitors.
+- **Evidence provenance:** Label findings as observed, inferred, or recommended; distinguish first-party, third-party, syndicated, and platform-generated evidence; record collection depth and confidence.
+- **Post-purchase VOC:** Use the hero brand's survey process to validate public-source hypotheses with purchase-trigger, competitor-consideration, setup, durability, support, and retention questions.
 
 ## Output Format
 
@@ -37,6 +41,7 @@ The report MUST include:
 - **Sentiment section** per competitor with pros/cons.
 - **Meta Ads section** with volume estimate and creative angle analysis.
 - **Strategic Takeaways** with Opportunities, Threats, and Creative Inspiration.
+- **Evidence Quality & VOC Plan** with sample depth, source limitations, confidence labels, and the next first-party survey actions.
 
 ### HTML Output
 

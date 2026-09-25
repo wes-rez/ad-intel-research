@@ -20,6 +20,17 @@ This workflow guides the process of gathering comprehensive intelligence on a co
 3. Analyze sentiment, common praises, and frequent complaints. Look for authentic user experiences and pain points.
 4. Note DIY alternatives or workarounds users mention — these are often the real competition.
 
+### Evidence-enrichment subagents
+
+When the report requires deeper customer evidence, run the four workstreams in [references/subagent_workflows.md](subagent_workflows.md) in parallel, then synthesize them before writing the final report:
+
+1. **Reviews and Trustpilot:** Ask whether to inspect the top 1,000 publicly accessible reviews per brand (default) or all publicly accessible reviews. Inspect multiple pages, record the exposed aggregate versus text actually reviewed, and deduplicate syndicated content.
+2. **Reddit and niche communities:** Use query families for brands, comparisons, failure modes, purchase intent, and DIY alternatives. Capture direct user language, thread URLs, dates, community context, and whether the statement is an owner experience or recommendation.
+3. **Amazon marketplace:** Capture exact product/ASIN URLs, visible price, rating, review count/distribution, variants, Q&A themes, “Customers say” summaries, and recurring setup, durability, shipping, or support issues. Mark Amazon-generated aggregation separately from direct review text.
+4. **Hero-brand post-purchase VOC:** Design a short delivery/first-use survey and a deeper 30-day survey. Ask about purchase triggers, alternatives considered, offer attribution, setup, durability, support, returns, repeat use, and desired improvements. Do not invent responses.
+
+Every workstream must record source provenance, collection depth, confidence, and limitations. Use the shared evidence schema and synthesis requirements in `subagent_workflows.md`.
+
 ## Step 4: Review Site Analysis
 1. Use the `search` tool to find brand profiles on Trustpilot, Amazon, G2, Capterra, or industry-specific platforms.
 2. Note the overall rating and review volume.
@@ -43,8 +54,11 @@ This workflow guides the process of gathering comprehensive intelligence on a co
 ## Step 7: Synthesize and Report
 1. Compile all findings into the structured report using `templates/report_template.md`.
 2. Always include the **Competitor Comparison Table** (brand, category, key products, price range, USP, current offers).
-3. Highlight the client brand's row in the table for easy reference.
-4. Synthesize actionable strategic takeaways: Opportunities, Threats, Creative Inspiration.
+3. Highlight the client's own brand's row in the table.
+4. Add an evidence matrix showing source type, sample depth, confidence, and repeated themes.
+5. Clearly distinguish **Observed**, **Inferred**, and **Recommended** conclusions.
+6. Synthesize actionable strategic takeaways: Opportunities, Threats, Creative Inspiration.
+7. Add a first-party VOC validation plan based on the hero-brand post-purchase survey workstream.
 
 ## Step 8: HTML Output (if requested)
 If the user requests an HTML version styled to their brand:

@@ -72,6 +72,32 @@
 3. **[Hook/Angle]:** [Describe the ad concept and why it works]
 
 ---
+## 4. Evidence Quality & Customer Voice Plan
+
+### 4.1 Evidence Matrix
+
+| Brand | Theme | Source Type | Source / URL | Sample or Visible Count | Text Inspected | Confidence | Limitations |
+|---|---|---|---|---:|---:|---|---|
+| [Brand] | [Theme] | [First-party / Third-party / Syndicated / Platform aggregation] | [URL] | [Count] | [Count] | [High / Medium / Low] | [Caveat] |
+
+Label conclusions as **Observed**, **Inferred**, or **Recommended**. Do not combine first-party testimonials, syndicated reviews, and independent reviews without identifying their provenance.
+
+### 4.2 Post-Purchase VOC Validation Plan
+
+- **Immediate delivery survey:** [Questions and trigger]
+- **7–14 day first-use survey:** [Questions and trigger]
+- **30-day usage survey:** [Questions and trigger]
+- **Return/support survey:** [Questions and trigger]
+- **Segments to compare:** [SKU, sport, age/level, channel, offer, competitor considered, use case]
+- **Coding taxonomy:** [Setup, durability, portability, stability, value, support, warranty, performance, space, storage, shipping, DIY]
+- **Next review date:** [Date or cadence]
+
+### 4.3 Research Gaps
+
+1. **[Gap]:** [What could not be verified and how to validate it]
+2. **[Gap]:** [What could not be verified and how to validate it]
+
+---
 ## References
 [1] [Source description](URL)
 [2] [Source description](URL)
