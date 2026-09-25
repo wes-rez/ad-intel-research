@@ -55,6 +55,19 @@ If the user requests an HTML version styled to their brand/agency site:
 
 See [references/workflow.md](references/workflow.md) Step 8 for the HTML extraction method.
 
+### Final Creative Brief Report Quality Standard
+
+The final Creative Insights Brief is a team-facing deliverable, not a raw research dump. Before delivery, make it easy to scan and presentable to the wider team:
+
+1. **Delivery format:** The team may choose **HTML or PDF**. Use the format they select and ensure the final file opens cleanly without requiring a development environment. If no format has been selected, ask the team before generating the final deliverable.
+2. **Hero-branding:** Brand the report to the hero brand, including its logo or wordmark where permitted, visual identity, color palette, typography, imagery direction, and tone. Do not substitute Rez Media branding for the hero brand in the report body.
+3. **Visual usability:** Use clear hierarchy, generous spacing, scannable sections, readable tables, callout cards, concise labels, and visual emphasis for the most important trends, avatars, and recommendations. Avoid dense walls of text and tables that are unreadable at normal viewing size.
+4. **Objections and rebuttals:** Include at least **10 distinct customer objections**, each paired with a credible, evidence-based rebuttal or solution angle and the proof, product detail, or test needed to support it. Never invent evidence; label recommendations and hypotheses clearly.
+5. **Headline bank:** Include at least **10 headline options**, written for the hero brand and tied to observed customer language, trends, benefits, or proof. Label them as evidence-backed drafts or recommendations unless they have been tested in-market.
+6. **Us-vs.-them positioning:** Include at least **10 distinct us-vs.-them comparisons** covering meaningful alternatives such as named competitors, DIY solutions, substitutes, or doing nothing. Ground each comparison in evidence and avoid unsupported superiority claims.
+7. **Authority drivers:** Include **3 authority drivers** for the target avatar—such as the founder, credentialed experts, practitioners who work in the industry daily, coaches, technicians, or credible peers. For each driver, explain why the avatar would listen, what proof or credentials support the authority, and which message or creative format could deploy it.
+8. **Final QA:** Confirm that every required section is populated, source provenance and confidence are visible, quotes are attributed, claims are supportable, the hero brand is consistently named, and the selected HTML/PDF file has been visually checked before delivery.
+
 ## Integration with Creative Strategist
 
 When used alongside the `creative-strategist` skill, pass these outputs directly:
