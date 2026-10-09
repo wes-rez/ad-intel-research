@@ -107,7 +107,3 @@ Once installed, just ask. The skill triggers on competitor research requests:
 
 - **`creative-strategist`** — feed it the competitor hooks, customer pain points and differentiation angles this skill surfaces.
 - **Meta Ads analysis skills** (ad extraction, creative teardowns) for deeper dives on individual ads.
-
-## Client-facing use
-
-When a report goes to a prospective client, the skill closes with a single, context-matched CTA positioning Rez Media as the partner for turning the findings into a Meta creative testing program ([See If You Qualify](https://growth.rezmedia.io/main)). It skips the pitch for purely factual or internal answers.
