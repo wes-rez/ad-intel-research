@@ -1,0 +1,269 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Grifon Creative Brief</title>
+<meta name="description" content="Voice-of-customer creative brief for Grifon sinks: objections, headlines, us-vs-them, authority drivers, avatars and test plan.">
+<style>
+/* Palette: granite/charcoal + warm stone. Grifon's official tokens could not be extracted (site blocked); swap these values once confirmed. */
+:root{
+  --bg:#f6f4f1; --surface:#ffffff; --surface-2:#efebe6; --ink:#1d1f21; --ink-2:#4a4e52; --muted:#767b80;
+  --line:#ddd7cf; --accent:#2f3b45; --accent-ink:#ffffff; --brass:#a07a3c;
+  --ok:#2e6b4f; --warn:#9a5b13; --risk:#9b2c2c; --tag:#e7e2da;
+  --radius:12px; --font:"Montserrat",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#131517; --surface:#1b1e21; --surface-2:#22262a; --ink:#eceae6; --ink-2:#c3c0ba; --muted:#959a9f;
+    --line:#2f3439; --accent:#c9d3dc; --accent-ink:#131517; --brass:#d1a865;
+    --ok:#6cc59a; --warn:#e3a35a; --risk:#ef8a8a; --tag:#2a2f34;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#131517; --surface:#1b1e21; --surface-2:#22262a; --ink:#eceae6; --ink-2:#c3c0ba; --muted:#959a9f;
+  --line:#2f3439; --accent:#c9d3dc; --accent-ink:#131517; --brass:#d1a865;
+  --ok:#6cc59a; --warn:#e3a35a; --risk:#ef8a8a; --tag:#2a2f34;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.6 var(--font);-webkit-font-smoothing:antialiased}
+a{color:var(--brass)}
+.wrap{max-width:1120px;margin:0 auto;padding:0 16px}
+header.top{position:sticky;top:0;z-index:5;background:color-mix(in srgb,var(--bg) 92%,transparent);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+header.top .wrap{display:flex;align-items:center;gap:18px;height:56px;overflow-x:auto;white-space:nowrap}
+.mark{font-weight:800;letter-spacing:.28em;font-size:15px}
+.mark span{color:var(--brass)}
+nav a{color:var(--ink-2);text-decoration:none;font-size:13px;margin-right:14px}
+nav a:hover{color:var(--ink)}
+.hero{padding:56px 0 28px}
+.eyebrow{font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--brass);font-weight:700}
+h1{font-size:clamp(28px,4.6vw,46px);line-height:1.1;margin:10px 0 14px;letter-spacing:-.01em}
+h2{font-size:clamp(22px,3vw,30px);margin:0 0 6px;letter-spacing:-.01em}
+h3{font-size:16px;margin:0 0 6px}
+.lede{color:var(--ink-2);max-width:760px;font-size:17px}
+.meta{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+.chip{background:var(--tag);color:var(--ink-2);border-radius:999px;padding:4px 10px;font-size:12px}
+.chip.o{background:color-mix(in srgb,var(--ok) 16%,transparent);color:var(--ok)}
+.chip.i{background:color-mix(in srgb,var(--warn) 16%,transparent);color:var(--warn)}
+.chip.r{background:color-mix(in srgb,var(--accent) 14%,transparent);color:var(--accent)}
+.chip.x{background:color-mix(in srgb,var(--risk) 14%,transparent);color:var(--risk)}
+section{padding:40px 0;border-top:1px solid var(--line)}
+.sub{color:var(--muted);margin:0 0 22px}
+.grid{display:grid;gap:14px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(260px,1fr))}
+.g2x2{grid-template-columns:1fr}@media(min-width:720px){.g2x2{grid-template-columns:1fr 1fr}}
+.g4{grid-template-columns:repeat(auto-fit,minmax(200px,1fr))}
+.card{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:18px}
+.card p{margin:6px 0 0;color:var(--ink-2)}
+.kpi .n{font-size:30px;font-weight:800;letter-spacing:-.02em}
+.kpi .l{color:var(--muted);font-size:13px}
+.callout{background:var(--accent);color:var(--accent-ink);border-radius:var(--radius);padding:20px}
+.callout p{color:inherit;opacity:.9;margin:6px 0 0}
+.alert{border-left:4px solid var(--risk);background:var(--surface);padding:14px 16px;border-radius:8px;color:var(--ink-2)}
+q,blockquote{font-style:italic}
+blockquote{margin:10px 0 0;padding-left:12px;border-left:3px solid var(--brass);color:var(--ink)}
+.src{display:block;font-size:12px;color:var(--muted);font-style:normal;margin-top:4px}
+.tbl{overflow-x:auto;border:1px solid var(--line);border-radius:var(--radius);background:var(--surface)}
+table{border-collapse:collapse;width:100%;min-width:720px;font-size:14px}
+th,td{text-align:left;vertical-align:top;padding:11px 12px;border-bottom:1px solid var(--line)}
+th{font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted);background:var(--surface-2);position:sticky;top:0}
+tr:last-child td{border-bottom:0}
+tr.hero-row td{background:color-mix(in srgb,var(--brass) 10%,transparent)}
+.num{font-weight:800;color:var(--brass);width:34px}
+.hl{font-size:18px;font-weight:700;line-height:1.35}
+.hl small{display:block;font-weight:400;font-size:12px;color:var(--muted);margin-top:6px}
+footer{padding:36px 0 60px;color:var(--muted);font-size:13px;border-top:1px solid var(--line)}
+.themebtn{margin-left:auto;background:var(--surface);border:1px solid var(--line);color:var(--ink-2);border-radius:999px;padding:4px 10px;font:inherit;font-size:12px;cursor:pointer}
+@media print{header.top{position:static}.themebtn{display:none}section{break-inside:avoid-page}}
+</style>
+</head>
+<body>
+<header class="top"><div class="wrap">
+  <div class="mark">GRI<span>F</span>ON</div>
+  <nav>
+    <a href="#readout">Readout</a><a href="#trends">Trends</a><a href="#objections">Objections</a><a href="#headlines">Headlines</a><a href="#vs">Us vs Them</a><a href="#authority">Authority</a><a href="#avatars">Avatars</a><a href="#tests">Test Plan</a><a href="#evidence">Evidence</a>
+  </nav>
+  <button class="themebtn" id="tb" type="button">Theme</button>
+</div></header>
+
+<main class="wrap">
+<div class="hero">
+  <div class="eyebrow">Creative Insights Brief · Kitchen Sinks · Canada / Québec</div>
+  <h1>Quiet, matched to your countertop, and backed by a company you can visit.</h1>
+  <p class="lede">What customers of Grifon, Kraus, Ruvati, Blanco, Kindred and Amazon value brands say on Trustpilot, Amazon, retail sites and Grifon's own store, turned into objections, headlines, positioning and tests.</p>
+  <div class="meta">
+    <span class="chip">Run 2026-10-14</span>
+    <span class="chip o">O = Observed</span><span class="chip i">I = Inferred</span><span class="chip r">R = Recommended</span>
+    <span class="chip x">Reddit: blocked, not collected</span><span class="chip x">Meta Ad Library: excluded</span>
+  </div>
+</div>
+
+<section id="readout">
+  <h2>Executive readout</h2>
+  <p class="sub">The four findings that matter most.</p>
+  <div class="grid g4">
+    <div class="card kpi"><div class="n">0</div><div class="l">Trustpilot reviews for Grifon (no profile)</div><span class="chip o">O</span></div>
+    <div class="card kpi"><div class="n">~4</div><div class="l">Amazon.ca ratings across all Grifon listings</div><span class="chip o">O</span></div>
+    <div class="card kpi"><div class="n">2,566</div><div class="l">Wayfair reviews on one Kraus Kore sink (4.7★)</div><span class="chip o">O</span></div>
+    <div class="card kpi"><div class="n">1.7★</div><div class="l">Blanco on Trustpilot · 123 reviews · 74% 1★</div><span class="chip o">O</span></div>
+  </div>
+  <div class="grid g2x2" style="margin-top:14px">
+    <div class="callout"><h3>1 · Trust is the bottleneck, not the product</h3><p>On-site reviews are strong (GS430: 51 reviews, all 5★), but Grifon has almost no independent social proof. Competitors have thousands of reviews.</p></div>
+    <div class="card"><h3>2 · Competitor reviews give shoppers reasons to switch</h3><p>Rust and spots on new stainless, flat bottoms that trap food, composite staining, and warranty claims that go nowhere. <span class="chip o">O</span></p></div>
+    <div class="card"><h3>3 · An angle only Grifon can use</h3><p>Reviews praise <b>quiet</b> and <b>countertop match</b>, and the parent company <i>installs countertops</i>. "Picked by the people who cut your countertop." <span class="chip i">I</span></p></div>
+    <div class="card"><h3>4 · Fix the store before scaling</h3><p>GS430 is listed as 16G on its page and 18G on its collection page; prices conflict between pages; template text sits next to reviews; listings show 3 addresses. <span class="chip r">R</span></p></div>
+  </div>
+</section>
+
+<section id="trends">
+  <h2>Cross-brand trends</h2>
+  <p class="sub">The same complaints and desires show up across brands and platforms.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Trend</th><th>Where</th><th>Customer language</th><th>Creative implication</th><th>Conf.</th></tr></thead>
+    <tbody>
+      <tr><td><b>New-sink rust and spots</b></td><td>Kraus (Wayfair, Houzz), Ruvati, Kindred</td><td><q>less than two months it started to rust</q></td><td>Care kit + plain warranty; day-30 photo proof</td><td>Med</td></tr>
+      <tr><td><b>Flat bottom pools food</b></td><td>Ruvati (Lowe's, Wayfair), Kraus</td><td><q>food gets stuck in the bottom easily</q></td><td>Show the drain path, only if the slope is verified</td><td>Med</td></tr>
+      <tr><td><b>Noise</b></td><td>Grifon reviews, category guides</td><td><q>much quieter than my old sink</q></td><td>Lead sensory hook</td><td>Med</td></tr>
+      <tr><td><b>Composite stains (light colours)</b></td><td>Blanco (Trustpilot, Home Depot)</td><td><q>staining for years… even though I have followed cleaning instructions</q></td><td>Lead with dark Azur; stain test before any claim</td><td>Med</td></tr>
+      <tr><td><b>Warranty and support friction</b></td><td>Blanco, Kindred, Kraus PDF</td><td><q>Kindred also says that is not a warranty issue</q></td><td>Showroom + phone + plain-language warranty</td><td>Med</td></tr>
+      <tr><td><b>Countertop-led purchase</b></td><td>Grifon reviews</td><td><q>complements our quartz perfectly</q></td><td>Sink + countertop pairing content</td><td>Med</td></tr>
+      <tr><td><b>Reviews close the sale</b></td><td>Kindred (Canadian Tire)</td><td><q>more expensive than other sinks but reviews seem great</q></td><td>Review sprint + UGC</td><td>Med</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="objections">
+  <h2>10 objections and rebuttals</h2>
+  <p class="sub">Each rebuttal lists the proof it needs. Don't run a rebuttal until its proof exists.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Objection (verbatim where available)</th><th>Source</th><th>Rebuttal / solution angle</th><th>Proof needed</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>"Never heard of Grifon, there are no reviews anywhere."</td><td>Hero gap <span class="chip i">I</span></td><td>Part of a Québec countertop company (since 2004, per brand). Visit the showroom.</td><td>Independent sink reviews; Granite Grifon's 177 Google reviews (4.7)</td></tr>
+      <tr><td class="num">2</td><td><q>less than two months it started to rust</q></td><td>Kraus · Wayfair</td><td>Explain post-install "rust" from countertop dust; care routine; local warranty contact</td><td>Steel grade spec; care card; warranty text</td></tr>
+      <tr><td class="num">3</td><td><q>spots started to appear on the surface after just a day or two of use</q></td><td>Ruvati · Desertcart</td><td>Brushed finish + grid + 30-second wipe routine</td><td>Day-30 customer photos</td></tr>
+      <tr><td class="num">4</td><td>Scratches within hours, even with the grid <i>(paraphrase)</i></td><td>Kraus · Home Depot</td><td>Grid included; scratches blend into a patina; or choose granite Azur</td><td>Patina demo</td></tr>
+      <tr><td class="num">5</td><td><q>it has been staining for years… even though I have followed cleaning instructions</q></td><td>Blanco · Trustpilot</td><td>Dark Azur colourways; honest care guide</td><td>Stain test video before claiming anything</td></tr>
+      <tr><td class="num">6</td><td><q>After barely 12 months use it has ugly cracks in it</q></td><td>Blanco · Trustpilot</td><td>Limited lifetime warranty on defects; local inspection</td><td>Published warranty; drop-test content</td></tr>
+      <tr><td class="num">7</td><td><q>food gets stuck in the bottom easily</q></td><td>Ruvati · Lowe's</td><td>Show Grifon's drain placement and slope</td><td><b>Verify the slope spec first</b></td></tr>
+      <tr><td class="num">8</td><td><q>the service team didn't respond</q></td><td>Blanco · Trustpilot</td><td>Real phone number, showroom, named contact</td><td>Response-time SLA</td></tr>
+      <tr><td class="num">9</td><td>"Stainless sinks are loud." <q>water from the faucet drums on the bottom</q></td><td>Category guide</td><td>Pads cover 80%+ of the sink, plus undercoating; <q>much quieter than my old sink</q></td><td>Decibel side-by-side</td></tr>
+      <tr><td class="num">10</td><td>"Amazon has the same workstation for less."</td><td>Lordear #5 Best Seller <span class="chip o">O</span></td><td>Same format, with a real company behind it; kit included; warranty you can walk into</td><td>Total-cost comparison</td></tr>
+      <tr><td class="num">11</td><td>"Will it arrive damaged?"</td><td>Eterna packaging praise</td><td>Ships from the Québec warehouse; free over $350</td><td>Unboxing video</td></tr>
+      <tr><td class="num">12</td><td>"Is it 16 or 18 gauge?"</td><td>grifon.co spec conflict <span class="chip o">O</span></td><td>Fix the site, then state the gauge with a thickness demo</td><td>Corrected spec sheets</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="headlines">
+  <h2>Headline bank</h2>
+  <p class="sub">Evidence-backed drafts tied to real customer language. <b>Untested</b>; treat them as hypotheses.</p>
+  <div class="grid g3">
+    <div class="card hl">Deep. Quiet. Made to match your quartz.<small>From <q>deep, quiet, and complements our quartz perfectly</q> (Grifon review)</small></div>
+    <div class="card hl">Much quieter than your old sink.<small>GS430 review</small></div>
+    <div class="card hl">Picked by the people who cut your countertop.<small>Granite Grifon heritage</small></div>
+    <div class="card hl">The sink that finally matches your black faucet.<small>Azur review</small></div>
+    <div class="card hl">Love composite? Get it darker, quieter, for less.<small>Blanco staining + price gap</small></div>
+    <div class="card hl">Your warranty desk is in Boisbriand, not a call centre.<small>Competitor support friction</small></div>
+    <div class="card hl">Board, colander, drying rack: all in the box.<small>Accessory praise (all brands)</small></div>
+    <div class="card hl">Big pans fit. Prep happens over the sink.<small><q>large enough for my biggest pans</q> (Ruvati review)</small></div>
+    <div class="card hl">Shipped from our Québec warehouse. Free over $350.<small>Store promise</small></div>
+    <div class="card hl">New countertop? Don't keep the old sink.<small>Do-nothing alternative</small></div>
+    <div class="card hl">« Profond, silencieux, parfaitement assorti à votre quartz. »<small>FR adaptation of #1</small></div>
+    <div class="card hl">« L'évier choisi par ceux qui taillent votre comptoir. »<small>FR adaptation of #3</small></div>
+  </div>
+</section>
+
+<section id="vs">
+  <h2>Us vs them: 10 comparisons</h2>
+  <p class="sub">Built from evidence only, with no blanket superiority claims. Grifon claims marked "verify" need live-site confirmation.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>#</th><th>Versus</th><th>Grifon</th><th>Them</th><th>Basis</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td>Kraus Kore price</td><td>GS430 workstation ~$420–490 CAD, kit included</td><td>~$499.95 USD</td><td><span class="chip o">O</span> prices</td></tr>
+      <tr><td class="num">2</td><td>Kraus warranty</td><td>Limited lifetime + local showroom (verify terms)</td><td>Excludes <q>cosmetic rust, scratches or dents</q>; original location only</td><td><span class="chip o">O</span> Kraus PDF</td></tr>
+      <tr><td class="num">3</td><td>Ruvati noise / build</td><td>Pads cover 80%+ of the sink</td><td>Reviews: <q>food gets stuck in the bottom easily</q></td><td><span class="chip o">O</span></td></tr>
+      <tr><td class="num">4</td><td>Ruvati finish</td><td>See the finish in person at the showroom</td><td><q>not matte at all and looked very cheap for its price</q></td><td><span class="chip o">O</span> Perigold</td></tr>
+      <tr><td class="num">5</td><td>Blanco price</td><td>Azur granite ~$555–590 CAD</td><td>PRECIS / DIAMOND $950–1,400 CAD regular</td><td><span class="chip o">O</span></td></tr>
+      <tr><td class="num">6</td><td>Blanco support</td><td>Local phone + showroom</td><td>Trustpilot 1.7★: <q>the most ridiculous and frustrating process</q></td><td><span class="chip o">O</span></td></tr>
+      <tr><td class="num">7</td><td>Kindred</td><td>16G GS430 (verify) + accessory kit</td><td>Steel Queen 20G; <q>not a warranty issue</q></td><td><span class="chip o">O</span></td></tr>
+      <tr><td class="num">8</td><td>Amazon value brands</td><td>A company you can visit</td><td>Marketplace seller</td><td><span class="chip i">I</span></td></tr>
+      <tr><td class="num">9</td><td>Doing nothing</td><td>Quiet, matched sink with the new counters</td><td>Old, noisy, mismatched sink</td><td><span class="chip i">I</span></td></tr>
+      <tr><td class="num">10</td><td>Separate sink + counter vendors</td><td>One company for the cut-out and the sink</td><td>Two vendors to coordinate</td><td><span class="chip i">I</span> validate via survey</td></tr>
+    </tbody>
+  </table></div>
+</section>
+
+<section id="authority">
+  <h2>3 authority drivers</h2>
+  <p class="sub">Who the avatar trusts, and how to put them on camera.</p>
+  <div class="grid g3">
+    <div class="card"><span class="eyebrow">01</span><h3>Grifon fabricators and installers</h3><p><b>Why they listen:</b> these people cut the sink hole and see every brand succeed or fail.</p><p><b>Proof:</b> countertop business "since 2004" (brand claim); Granite Grifon at 4.7★ from 177 Google reviews.</p><p><b>Format:</b> installer-POV Reels, "What we see under 1,000 counters."</p></div>
+    <div class="card"><span class="eyebrow">02</span><h3>Kitchen contractors and plumbers</h3><p><b>Why they listen:</b> buyers lean on trades opinions.</p><blockquote>even my contractor mentioned that this was indeed a very good sink<span class="src">Competitor review, Kraus · Walmart</span></blockquote><p><b>Format:</b> contractor testimonial cut-downs; trade-referral offer.</p></div>
+    <div class="card"><span class="eyebrow">03</span><h3>Real Québec homeowners</h3><p><b>Why they listen:</b> peer proof in their own language and housing stock.</p><p><b>Proof:</b> post-purchase survey opt-ins and on-site review photos.</p><p><b>Format:</b> bilingual UGC kitchen tours and 30-day check-ins.</p></div>
+  </div>
+</section>
+
+<section id="avatars">
+  <h2>Customer avatars</h2>
+  <p class="sub">Demographics are estimates <span class="chip i">I</span>. Each quote is labelled hero or competitor.</p>
+  <div class="grid g3">
+    <div class="card"><h3>The Countertop Renovator</h3><p>35–60 · Québec homeowner replacing counters</p><p><b>Pain:</b> old sink doesn't match; coordinating trades. <b>Objection:</b> "Will it match? Who do I call?" <b>Trigger:</b> new countertop quote.</p>
+      <blockquote>It's deep, quiet, and complements our quartz perfectly<span class="src">Hero · grifon.co review</span></blockquote>
+      <blockquote>matches my black faucet and my honed granite counter tops very well<span class="src">Hero · grifon.co review</span></blockquote></div>
+    <div class="card"><h3>The Serious Home Cook</h3><p>30–55 · daily cooking, big pans</p><p><b>Pain:</b> noise, small basin, cramped prep. <b>Objection:</b> "Workstation kits are gimmicks." <b>Alternatives:</b> Ruvati, Kraus Kore, Amazon.</p>
+      <blockquote>much quieter than my old sink<span class="src">Hero · grifon.co review</span></blockquote>
+      <blockquote>large enough for my biggest pans<span class="src">Competitor · Ruvati · Home Depot</span></blockquote></div>
+    <div class="card"><h3>The Value-Cautious Replacer</h3><p>30–65 · replacing a failed or dated sink</p><p><b>Pain:</b> fear of rust, spots, a cheap finish. <b>Objection:</b> "Reviews? Is the sale real?" <b>Alternatives:</b> Kindred big-box, Amazon value.</p>
+      <blockquote>more expensive than other sinks but reviews seem great<span class="src">Competitor · Kindred · Canadian Tire</span></blockquote>
+      <blockquote>less than two months it started to rust<span class="src">Competitor · Kraus · Wayfair</span></blockquote></div>
+  </div>
+</section>
+
+<section id="tests">
+  <h2>Prioritized creative test plan</h2>
+  <p class="sub">Run in order. Each test states the hypothesis it measures.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>P</th><th>Concept</th><th>Hook</th><th>Proof</th><th>CTA / offer</th><th>Landing page</th><th>Hypothesis</th></tr></thead>
+    <tbody>
+      <tr><td class="num">1</td><td><b>Sound Test</b></td><td>"Hear your old sink. Now hear this."</td><td>Side-by-side audio + review quote</td><td>Shop Hydra Tech</td><td>Sound video + pad diagram on GS430 page</td><td>Beats spec-led creative on thumb-stop and CTR</td></tr>
+      <tr><td class="num">2</td><td><b>Cut by Your Countertop Pros</b></td><td>"The people who cut your countertop picked this sink."</td><td>Installer on camera, showroom</td><td>Book showroom / pairing credit</td><td>Pairing landing page</td><td>Higher CVR in reno-intent audiences</td></tr>
+      <tr><td class="num">3</td><td><b>Darker. Quieter. Half the price.</b></td><td>"Love composite sinks but scared of stains?"</td><td>Azur price vs premium; stain test</td><td>Shop Azur</td><td>Care guide + stain test on Azur page</td><td>Lower CPA than generic granite creative</td></tr>
+      <tr><td class="num">4</td><td><b>Warranty Desk 20 Min Away</b></td><td>"Ever tried to claim a sink warranty?"</td><td>Showroom, phone, warranty text</td><td>Shop + warranty page</td><td>One-page warranty explainer</td><td>Lower PDP bounce</td></tr>
+      <tr><td class="num">5</td><td><b>Unbox to Install</b></td><td>"Everything's in the box."</td><td>Kit, packaging</td><td>$619 sink + faucet bundle</td><td>Kit checklist on product page</td><td>Higher AOV via bundle</td></tr>
+      <tr><td class="num">6</td><td><b>Vraies cuisines</b></td><td>"Vraies cuisines, vrais éviers"</td><td>Survey UGC</td><td>Shop</td><td>UGC gallery</td><td>UGC beats studio creative on CTR (FR)</td></tr>
+    </tbody>
+  </table></div>
+  <div class="grid g2" style="margin-top:14px">
+    <div class="card"><h3>Offer hypotheses</h3><p>1) Countertop + sink pairing credit · 2) Quiet Kit bundle with a 30-day sound-test return · 3) Free care kit for a photo review after 30 days (not conditional on a positive review) · 4) Québec-only price-match against big-box sales on comparable gauge. <span class="chip r">R</span></p></div>
+    <div class="card"><h3>Fix before launch</h3><p>Gauge conflict (16G/18G), conflicting prices, template text beside reviews, address listings (630/644/654), Trustpilot/Google review invites, Amazon Vine for GS430 and AZUR30. <span class="chip r">R</span></p></div>
+  </div>
+</section>
+
+<section id="evidence">
+  <h2>Competitive snapshot and evidence quality</h2>
+  <p class="sub">Grifon row highlighted. CAD unless marked.</p>
+  <div class="tbl"><table>
+    <thead><tr><th>Brand</th><th>Price range</th><th>Trustpilot</th><th>Amazon</th><th>Retail reviews</th><th>Key theme</th></tr></thead>
+    <tbody>
+      <tr class="hero-row"><td><b>Grifon</b></td><td>$390–660; bundle $619</td><td>No profile</td><td>~4 ratings, all 5★</td><td>On-site: GS430 51 (5★), AZUR30 14</td><td>Quiet; countertop match</td></tr>
+      <tr><td>Kraus</td><td>~$500 USD (Kore 30")</td><td>0, unclaimed</td><td>Listed</td><td>Wayfair 4.7 / 2,566</td><td>Rust/scratch complaints</td></tr>
+      <tr><td>Ruvati</td><td>$399–599 USD</td><td>No profile</td><td>Brand store</td><td>Home Depot 4.6 / 1,091</td><td>Flat bottom, spots</td></tr>
+      <tr><td>Blanco</td><td>$562–1,406</td><td><b>1.7 / 123</b></td><td>Listed</td><td>Staining (light colours)</td><td>Warranty/service pain</td></tr>
+      <tr><td>Kindred</td><td>$251–380</td><td>No profile</td><td>3.0–4.2★</td><td>Rona 2.5 / 4</td><td>Finish wear</td></tr>
+      <tr><td>Amazon value</td><td>Budget</td><td>n/a</td><td>Lordear #5 Best Seller</td><td>n/a</td><td>Price + Prime</td></tr>
+    </tbody>
+  </table></div>
+  <div class="alert" style="margin-top:14px"><b>Limitations.</b> grifon.co and Reddit were blocked in the research environment. Site data comes from search-indexed pages; Reddit has <b>no collected evidence</b> (a query plan is in <code>hero-reddit.md</code>). Amazon data is from listing snippets. Grifon reviews are vendor-hosted and unverified. Blanco's Trustpilot profile is unclaimed and skews EU/UK. Meta Ad Library was excluded by request. Full row-level evidence: <code>evidence.csv</code>.</div>
+</section>
+</main>
+
+<footer><div class="wrap">Grifon Creative Insights Brief · Run 2026-10-14 · Palette is a placeholder until Grifon's official brand tokens are confirmed · Sources and quotes in report.md and evidence.csv</div></footer>
+<script>
+(function(){var b=document.getElementById('tb'),r=document.documentElement;
+try{var s=localStorage.getItem('gtheme');if(s)r.setAttribute('data-theme',s);}catch(e){}
+b.addEventListener('click',function(){var d=r.getAttribute('data-theme');var dark=d?d==='dark':matchMedia('(prefers-color-scheme: dark)').matches;var n=dark?'light':'dark';r.setAttribute('data-theme',n);try{localStorage.setItem('gtheme',n);}catch(e){}});})();
+</script>
+</body>
+</html>
