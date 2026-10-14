@@ -33,9 +33,10 @@ When the report requires deeper customer evidence, follow the phased process in 
 Every workstream must record source provenance, collection depth, confidence, and limitations. Use the shared evidence schema and synthesis requirements in `subagent_workflows.md`.
 
 ## Step 4: Review Site Analysis
-1. Use the `search` tool to find brand profiles on Trustpilot, Amazon, G2, Capterra, or industry-specific platforms.
+1. For every brand in the report (hero and every competitor), always run this step — it is never skipped and never replaced by a vendor case study, the brand's own ad copy, or a brand-hosted review widget. Use the `search` tool to find brand profiles on Trustpilot, Amazon, G2, Capterra, or industry-specific platforms.
 2. Note the overall rating and review volume.
 3. Read a sample of positive and negative reviews to identify recurring themes.
+4. If no independent review-site listing and no Reddit thread exist for a brand after a genuine search, state that plainly in the report instead of filling the gap with secondary sources (case studies, ad copy, brand-hosted widgets). Those secondary sources may still be cited, but only as labeled supplements, never as a stand-in for review mining.
 
 ## Step 5: General Social Media & Search Analysis
 1. Use the `search` tool to find recent brand mentions on social media (Twitter, Facebook, TikTok) and news.
